@@ -207,3 +207,225 @@ document.querySelector('.child').addEventListener('click', (event) => {
 ---
 
 Ces fonctions sont fondamentales pour développer en JavaScript moderne et interactif. Vous pouvez les intégrer dans presque tous vos projets web.
+
+---
+
+---
+
+## 11. **`Object.keys`, `Object.values`, `Object.entries`**
+Ces méthodes permettent de travailler avec les propriétés des objets.
+
+### `Object.keys` (Clés)
+Retourne un tableau contenant les clés de l'objet.
+```javascript
+const user = { name: 'Alice', age: 25 };
+console.log(Object.keys(user)); // ["name", "age"]
+```
+
+### `Object.values` (Valeurs)
+Retourne un tableau contenant les valeurs de l'objet.
+```javascript
+console.log(Object.values(user)); // ["Alice", 25]
+```
+
+### `Object.entries` (Clés et valeurs)
+Retourne un tableau de paires `[clé, valeur]`.
+```javascript
+console.log(Object.entries(user)); // [["name", "Alice"], ["age", 25]]
+```
+
+---
+
+## 12. **`Array.prototype.forEach`**
+Exécute une fonction pour chaque élément d'un tableau.
+
+### Exemple
+```javascript
+const numbers = [1, 2, 3];
+numbers.forEach(num => {
+    console.log(num * 2); // Affiche 2, 4, 6
+});
+```
+
+---
+
+## 13. **`Array.prototype.find` et `Array.prototype.findIndex`**
+### `find`
+Retourne le premier élément correspondant à une condition.
+```javascript
+const users = [{ id: 1 }, { id: 2 }, { id: 3 }];
+const user = users.find(u => u.id === 2);
+console.log(user); // { id: 2 }
+```
+
+### `findIndex`
+Retourne l'index du premier élément correspondant à une condition.
+```javascript
+const index = users.findIndex(u => u.id === 2);
+console.log(index); // 1
+```
+
+---
+
+## 14. **`Array.prototype.some` et `Array.prototype.every`**
+### `some`
+Retourne `true` si au moins un élément satisfait une condition.
+```javascript
+const numbers = [1, 2, 3];
+console.log(numbers.some(num => num > 2)); // true
+```
+
+### `every`
+Retourne `true` si tous les éléments satisfont une condition.
+```javascript
+console.log(numbers.every(num => num > 0)); // true
+```
+
+---
+
+## 15. **`Promise`**
+Permet de gérer les opérations asynchrones.
+
+### Exemple simple
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Succès!'), 1000);
+});
+
+promise.then(result => console.log(result)); // "Succès!"
+```
+
+---
+
+## 16. **`try...catch`**
+Gère les erreurs dans le code.
+
+### Exemple
+```javascript
+try {
+    const result = JSON.parse('invalid JSON');
+} catch (error) {
+    console.error('Erreur détectée:', error.message);
+}
+```
+
+---
+
+## 17. **`splice`, `slice`**
+### `splice` (Modifie un tableau)
+Ajoute ou supprime des éléments.
+```javascript
+const array = [1, 2, 3, 4];
+array.splice(1, 2, 'a', 'b');
+console.log(array); // [1, "a", "b", 4]
+```
+
+### `slice` (Crée une copie partielle)
+Retourne une partie du tableau.
+```javascript
+const array = [1, 2, 3, 4];
+const part = array.slice(1, 3);
+console.log(part); // [2, 3]
+```
+
+---
+
+## 18. **`String.prototype.includes` et `startsWith`**
+### `includes`
+Vérifie si une chaîne contient une sous-chaîne.
+```javascript
+const text = 'Bonjour, monde!';
+console.log(text.includes('monde')); // true
+```
+
+### `startsWith`
+Vérifie si une chaîne commence par une sous-chaîne.
+```javascript
+console.log(text.startsWith('Bonjour')); // true
+```
+
+---
+
+## 19. **`typeof` et `instanceof`**
+### `typeof`
+Retourne le type d'une variable.
+```javascript
+console.log(typeof 'hello'); // "string"
+console.log(typeof 42); // "number"
+```
+
+### `instanceof`
+Vérifie si un objet est d'une certaine instance.
+```javascript
+console.log([] instanceof Array); // true
+```
+
+---
+
+## 20. **`document.createElement`**
+Crée un nouvel élément HTML.
+```javascript
+const div = document.createElement('div');
+div.textContent = 'Hello World!';
+document.body.appendChild(div);
+```
+
+---
+
+## 21. **`parentNode`, `children`, et `nextSibling`**
+### Naviguer dans le DOM
+```javascript
+const parent = document.getElementById('child').parentNode;
+console.log(parent);
+
+const children = document.getElementById('parent').children;
+console.log(children);
+
+const next = document.getElementById('child').nextSibling;
+console.log(next);
+```
+
+---
+
+## 22. **`cloneNode`**
+Clone un élément du DOM.
+```javascript
+const original = document.getElementById('box');
+const clone = original.cloneNode(true);
+document.body.appendChild(clone);
+```
+
+---
+
+## 23. **`String.prototype.replace`**
+Remplace une sous-chaîne dans une chaîne.
+```javascript
+const text = 'Bonjour, monde!';
+const newText = text.replace('monde', 'JavaScript');
+console.log(newText); // "Bonjour, JavaScript!"
+```
+
+---
+
+## 24. **`RegExp` (Expressions régulières)**
+Permet de travailler avec des motifs dans les chaînes.
+```javascript
+const regex = /\d+/;
+console.log(regex.test('123')); // true
+console.log('abc123'.match(regex)); // ["123"]
+```
+
+---
+
+## 25. **`Array.prototype.sort`**
+Trie un tableau.
+```javascript
+const numbers = [3, 1, 4];
+numbers.sort((a, b) => a - b);
+console.log(numbers); // [1, 3, 4]
+```
+
+---
+
+
+Un large éventail d'outils pour manipuler des données, interagir avec le DOM et gérer les opérations asynchrones. N'hésitez pas à expérimenter pour mieux les comprendre !

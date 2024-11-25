@@ -428,4 +428,207 @@ console.log(numbers); // [1, 3, 4]
 ---
 
 
-Un large éventail d'outils pour manipuler des données, interagir avec le DOM et gérer les opérations asynchrones. N'hésitez pas à expérimenter pour mieux les comprendre !
+Un large éventail d'outils pour manipuler des données, interagir avec le DOM et gérer les opérations asynchrones.
+
+
+
+---
+
+Il y a encore d'autres méthodes et concepts essentiels en JavaScript, surtout si l'on inclut des notions modernes ou spécifiques comme celles liées à l'**ES6+** et au fonctionnement avancé du langage. Voici une autre liste de fonctions et concepts importants :
+
+---
+
+## 26. **`Array.prototype.reduce`**
+Permet de réduire un tableau à une seule valeur en appliquant une fonction de cumul.
+
+### Exemple
+```javascript
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10
+```
+
+---
+
+## 27. **`setTimeout` et `setInterval`**
+### `setTimeout`
+Exécute une fonction après un délai spécifié.
+```javascript
+setTimeout(() => {
+    console.log('Message après 2 secondes');
+}, 2000);
+```
+
+### `setInterval`
+Exécute une fonction périodiquement.
+```javascript
+const intervalId = setInterval(() => {
+    console.log('Message toutes les 2 secondes');
+}, 2000);
+
+// Pour arrêter l'intervalle
+clearInterval(intervalId);
+```
+
+---
+
+## 28. **`fetch`**
+Permet de faire des requêtes HTTP pour interagir avec des API.
+
+### Exemple
+```javascript
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Erreur:', error));
+```
+
+---
+
+## 29. **`Map` et `Set`**
+Structures de données modernes introduites en ES6.
+
+### `Map`
+Un dictionnaire clé-valeur.
+```javascript
+const map = new Map();
+map.set('name', 'Alice');
+console.log(map.get('name')); // "Alice"
+```
+
+### `Set`
+Un ensemble de valeurs uniques.
+```javascript
+const set = new Set([1, 2, 3, 3]);
+console.log(set.size); // 3
+```
+
+---
+
+## 30. **`JSON.stringify` et `JSON.parse`**
+### `JSON.stringify`
+Convertit un objet JavaScript en une chaîne JSON.
+```javascript
+const obj = { name: 'Alice', age: 25 };
+const json = JSON.stringify(obj);
+console.log(json); // '{"name":"Alice","age":25}'
+```
+
+### `JSON.parse`
+Convertit une chaîne JSON en objet JavaScript.
+```javascript
+const parsed = JSON.parse(json);
+console.log(parsed); // { name: 'Alice', age: 25 }
+```
+
+---
+
+## 31. **`Math`**
+Des outils mathématiques intégrés.
+```javascript
+console.log(Math.random()); // Nombre aléatoire entre 0 et 1
+console.log(Math.round(4.5)); // 5
+console.log(Math.max(1, 2, 3)); // 3
+console.log(Math.sqrt(16)); // 4
+```
+
+---
+
+## 32. **`new Date`**
+Travaille avec les dates et heures.
+```javascript
+const now = new Date();
+console.log(now.toISOString()); // ISO string
+console.log(now.getFullYear()); // Année actuelle
+```
+
+---
+
+## 33. **`encodeURIComponent` et `decodeURIComponent`**
+Permettent d'encoder et de décoder des URI.
+
+### Exemple
+```javascript
+const url = 'https://example.com/?search=hello world';
+const encoded = encodeURIComponent(url);
+console.log(encoded);
+
+const decoded = decodeURIComponent(encoded);
+console.log(decoded);
+```
+
+---
+
+## 34. **`Array.prototype.flat`**
+Aplatie un tableau multidimensionnel.
+```javascript
+const nested = [1, [2, [3]]];
+const flat = nested.flat(2);
+console.log(flat); // [1, 2, 3]
+```
+
+---
+
+## 35. **`nullish coalescing (??)`**
+Retourne la première valeur définie (non `null` ou `undefined`).
+```javascript
+const name = null ?? 'Default';
+console.log(name); // "Default"
+```
+
+---
+
+## 36. **`Optional Chaining (?.)`**
+Permet d'accéder aux propriétés d'un objet sans risque d'erreur si elles sont `undefined`.
+```javascript
+const user = { name: 'Alice', address: { city: 'Paris' } };
+console.log(user?.address?.city); // "Paris"
+console.log(user?.phone?.number); // undefined
+```
+
+---
+
+## 37. **`Proxy`**
+Permet de personnaliser le comportement d'un objet.
+```javascript
+const handler = {
+    get: (target, prop) => (prop in target ? target[prop] : 'Propriété inexistante'),
+};
+const obj = new Proxy({ name: 'Alice' }, handler);
+console.log(obj.name); // "Alice"
+console.log(obj.age); // "Propriété inexistante"
+```
+
+---
+
+## 38. **`WeakMap` et `WeakSet`**
+Similaires à `Map` et `Set`, mais avec des références faibles, idéales pour le stockage temporaire.
+```javascript
+const weakMap = new WeakMap();
+const obj = {};
+weakMap.set(obj, 'value');
+console.log(weakMap.get(obj)); // "value"
+```
+
+---
+
+## 39. **`Array.prototype.map`**
+Transforme chaque élément d'un tableau.
+```javascript
+const numbers = [1, 2, 3];
+const squared = numbers.map(num => num ** 2);
+console.log(squared); // [1, 4, 9]
+```
+
+---
+
+## 40. **`Intl`**
+API pour l'internationalisation.
+```javascript
+const number = 123456.789;
+console.log(new Intl.NumberFormat('fr-FR').format(number)); // 123 456,789
+```
+
+---
+
+Cela couvre quasiment tous les concepts essentiels pour manipuler efficacement JavaScript.

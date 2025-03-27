@@ -169,4 +169,4 @@ console.log(nested.flat(2)); // [1, 2, 3, 4, 5, 6]
 
 ---
 
-Ces méthodes sont très utiles en JavaScript et TypeScript pour manipuler des données efficacement. Tu as besoin d’un exemple spécifique ou d’une explication plus détaillée sur une méthode en particulier ? 😊
+Ces méthodes sont très utiles en JavaScript et TypeScript pour manipuler des données efficacement.
